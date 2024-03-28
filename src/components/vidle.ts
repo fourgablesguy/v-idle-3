@@ -111,6 +111,7 @@ const Vidle = defineComponent({
       this.counter = window.setInterval(this.countdown, 1000);
     },
     clearTimer(event?: Event, loop = true) {
+      this.$emit("refresh");
       window.clearInterval(this.timer);
       window.clearInterval(this.counter);
       if (loop) {
